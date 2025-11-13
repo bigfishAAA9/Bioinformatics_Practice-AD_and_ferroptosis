@@ -21,8 +21,11 @@
 ## 获取数据
 ### Step1
 GEO 检索: ((Alzheimer's disease AND Hippocampus) AND "Homo sapiens"[porgn:__txid9606])
+
 下载文件 (summary)
+
 交付 LLM 初步筛选合适的样本 (筛选条件:source: AD患者死后海马体 + date type: 转录组)
+
 纳入数据集:
 - GSE173955
 - GSE184942
