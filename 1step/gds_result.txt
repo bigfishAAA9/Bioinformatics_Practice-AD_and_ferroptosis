@@ -1,0 +1,191 @@
+
+1. Human Brain Cell-Type-Specific Aging Clocks Based on Single-Nuclei Transcriptomics
+(Submitter supplied) Aging is the primary risk factor for most neurodegenerative diseases, yet the cell-type-specific progression of brain aging remains poorly understood. Here, human cell-type-specific transcriptomic aging clocks are developed using high-quality single-nucleus RNA sequencing data from post mortem human prefrontal cortex tissue of 31 donors aged 18–94 years, encompassing 73,941 high-quality nuclei. Distinct transcriptomic changes are observed across major cell types, including upregulation of inflammatory response genes in microglia from older samples. more...
+Organism:	Homo sapiens
+Type:		Expression profiling by high throughput sequencing
+Platform: GPL24676 31 Samples
+FTP download: GEO (TAR) ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE291nnn/GSE291605/
+Series		Accession: GSE291605	ID: 200291605
+
+2. Molecular Signatures of Resilience to Alzheimer’s Disease in Neocortical Layer 4 Neurons
+(Submitter supplied) Single-cell omics is advancing our understanding of selective neuronal vulnerability in Alzheimer’s disease (AD), revealing specific subtypes that are either susceptible or resilient to neurodegeneration. Using single-nucleus and spatial transcriptomics to compare neocortical regions affected early (prefrontal cortex and precuneus) or late (primary visual cortex) in AD, we identified a resilient excitatory population in layer 4 of the primary visual cortex expressing RORB, CUX2, and EYA4. more...
+Organism:	Homo sapiens
+Type:		Expression profiling by high throughput sequencing
+Platforms: GPL24676 GPL18573 244 Samples
+FTP download: GEO (H5AD) ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE263nnn/GSE263468/
+Series		Accession: GSE263468	ID: 200263468
+
+3. Transcriptome study of Alzheimer's disease on post-mortem human brain
+(Submitter supplied) INTRODUCTION: Neuropsychiatric symptoms are common in people with Alzheimer’s disease (AD) across all severity stages. Their heterogeneous presentation and variable temporal association with cognitive decline suggest shared and distinct biological mechanisms. We hypothesized that specific patterns of gene expression associate with distinct NIMH Research Domain Criteria (RDoC) domains in AD.  METHODS: Post-mortem bulk RNAseq on the insula and anterior cingulate cortex from 60 brain donors representing the spectrum of canonical AD neuropathology combined with natural language processing approaches based on the RDoC Clinical Domains.   RESULTS: Distinct sets of >100 genes (pFDR<0.05) were specifically associated with at least one clinical domain (Cognitive, Social, Negative, Positive, Arousal). more...
+Organism:	Homo sapiens
+Type:		Expression profiling by high throughput sequencing
+Platform: GPL34281 101 Samples
+FTP download: GEO (CSV) ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE261nnn/GSE261050/
+Series		Accession: GSE261050	ID: 200261050
+
+4. A pattern to rule them all: tracing a human brain map of shared molecular aspects across aging, Alzheimer’s disease and dementia with Lewy bodies
+(Submitter supplied) Aging is often characterized by a progressive loss of cognitive abilities due to the onset of different forms of dementia. Among these, Alzheimer’s Disease (AD) and dementia with Lewy bodies (LBD) are the most widespread ones. However, little is known about the common aspects between these conditions and how these aspects can be linked to aging itself. With this work, we aim to identify a molecular fil rouge that could link aging and different dementias in order to possibly highlight strategic targets for novel therapeutical approaches. more...
+Organism:	Homo sapiens
+Type:		Expression profiling by high throughput sequencing
+Platform: GPL21697 90 Samples
+FTP download: GEO (TXT) ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE280nnn/GSE280268/
+Series		Accession: GSE280268	ID: 200280268
+
+5. Recapitulation of pathophysiological features of AD in SARS-CoV-2 infected subjects
+(Submitter supplied) Infection with the etiological agent of COVID-19, SARS-CoV-2, appears capable of impacting cognition, which some patients with Post-acute Sequelae of SARS-CoV-2 (PASC). To evaluate neuro-pathophysiological consequences of SARS-CoV-2 infection, we examine transcriptional and cellular signatures in the Broadman area 9 (BA9) of the frontal cortex and the hippocampal formation (HF) in SARS-CoV-2, Alzheimer’s disease (AD) and SARS-CoV-2 infected AD individuals, compared to age- and gender-matched neurological cases. more...
+Organism:	Homo sapiens
+Type:		Expression profiling by high throughput sequencing
+Platform: GPL20301 32 Samples
+FTP download: GEO (TXT) ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE236nnn/GSE236562/
+Series		Accession: GSE236562	ID: 200236562
+
+6. A global view of aging and Alzheimer’s pathogenesis-associated cell population dynamics in mammalian brain
+(Submitter supplied) Prior studies applied single-cell approaches to explore gene expression changes in aged brains; however, they were limited by relatively shallow sampling of brain cell populations, and thus failed to characterize the detailed molecular signatures and dynamics of rare cell types associated with aging and diseases. Here, we set out to investigate the age-dependent transcriptional and chromatin dynamics across diverse brain cell types. more...
+Organism:	Homo sapiens; Mus musculus
+Type:		Expression profiling by high throughput sequencing; Genome binding/occupancy profiling by high throughput sequencing
+Platforms: GPL24676 GPL24247 3 Samples
+FTP download: GEO (CSV, TXT) ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE212nnn/GSE212606/
+Series		Accession: GSE212606	ID: 200212606
+
+7. Clonal hematopoiesis is associated with protection from Alzheimer's disease
+(Submitter supplied) scATAC-seq datasets of brain nuclei from people with and without CHIP
+Organism:	Homo sapiens
+Type:		Genome binding/occupancy profiling by high throughput sequencing
+Platform: GPL24676 16 Samples
+FTP download: GEO (TSV) ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE192nnn/GSE192838/
+Series		Accession: GSE192838	ID: 200192838
+
+8. Methylation differences in Alzheimer’s disease neuropathologic change in the aged human brain
+(Submitter supplied) AD neuropathologic change (ADNC) is known to be associated with numerous DNA methylation changes in the human brain, but the oldest old (>90 years) have so far been underrepresented in epigenetic studies of ADNC. Our study participants were individuals aged over 90 years (n= 47) from The 90+Study. We analyzed DNA methylation from bulk samples in eight precisely dissected regions of the human brain: middle frontal gyrus, cingulate gyrus, entorhinal cortex, dentate gyrus, CA1, substantia nigra, locus coeruleus and cerebellar cortex. more...
+Organism:	Homo sapiens
+Type:		Methylation profiling by genome tiling array
+Platform: GPL23976 321 Samples
+FTP download: GEO (CSV, IDAT, XLSX) ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE212nnn/GSE212682/
+Series		Accession: GSE212682	ID: 200212682
+
+9. Single-nucleus chromatin accessibility and transcriptomic characterization of Alzheimer’s Disease
+(Submitter supplied) The gene-regulatory landscape of the brain is highly dynamic in health and disease, coordinating a menagerie of biological processes across¬ distinct cell-types. Here, we present a multi-omic single-nucleus study of 191,890 nuclei in late-stage Alzheimer’s Disease (AD), accessible through our intuitive web portal, profiling chromatin accessibility and gene expression in the same biological samples and uncovering vast cellular heterogeneity. more...
+Organism:	Homo sapiens
+Type:		Expression profiling by high throughput sequencing; Genome binding/occupancy profiling by high throughput sequencing
+Platform: GPL24676 230 Samples
+FTP download: GEO (CSV, H5, RDA) ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE174nnn/GSE174367/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNA729525
+Series		Accession: GSE174367	ID: 200174367
+
+10. The human brain vasculature at single-cell resolution
+(Submitter supplied) 10x single-cell RNA-sequencing to profile human cerebrovascular cells in health and disease
+Organism:	Homo sapiens
+Type:		Expression profiling by high throughput sequencing
+Platform: GPL24676 25 Samples
+FTP download: GEO (TAR) ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE163nnn/GSE163577/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNA686798
+Series		Accession: GSE163577	ID: 200163577
+
+11. Epigenome wide association study of post-mortem Alzheimer’s Disease samples
+(Submitter supplied) Samples from 72 AD patients and 62 age-matched cognitively normal controls were assayed using Illumina© Infinium MethylationEPIC BeadChip. We performed an epigenome-wide association study (EWAS) to evaluate the epigenetic differences using post-mortem superior temporal gyrus (STG) and inferior frontal gyrus (IFG) samples. We performed an epigenome-wide association study (EWAS) to evaluate the epigenetic differences using post-mortem superior temporal gyrus (STG) and inferior frontal gyrus (IFG) samples.
+Organism:	Homo sapiens
+Type:		Methylation profiling by genome tiling array
+Platform: GPL21145 244 Samples
+FTP download: GEO (TXT) ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE156nnn/GSE156984/
+Series		Accession: GSE156984	ID: 200156984
+
+12. Bulk and single cell sequencing (bc-Smart-seq2  and 10XGenomics) of  human microglia from post mortem AD CNS tissue
+(Submitter supplied) Microglia are the tissue-resident macrophages of the central nervous system (CNS). Recent studies based on bulk and single-cell RNA sequencing in mice indicate high relevance of microglia with respect to risk genes and neuro-inflammation in Alzheimer’s disease. Here, we investigated microglia transcriptomes at bulk and single cell level in non-demented elderly and AD donors using acute human post-mortem cortical brain samples. more...
+Organism:	Homo sapiens
+Type:		Expression profiling by high throughput sequencing
+Platform: GPL21697 189 Samples
+FTP download: GEO (CSV, MTX, PY, TSV, TXT) ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE146nnn/GSE146639/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNA611563
+Series		Accession: GSE146639	ID: 200146639
+
+13. Molecular signatures underlying neurofibrillary tangle susceptibility in Alzheimer’s disease
+(Submitter supplied) Tau aggregation in neurofibrillary tangles (NFTs) is closely associated with neurodegeneration and cognitive decline in Alzheimer’s disease (AD). However, the molecular signatures that distinguish between aggregation-prone and aggregation-resistant cell states are unknown. We developed methods for the high-throughput isolation and transcriptome profiling of single somas with NFTs fro¬m human AD brain, quantified the susceptibility of 20 neocortical subtypes for NFT formation and death, and identified both shared and cell-type-specific signatures. more...
+Organism:	Homo sapiens
+Type:		Expression profiling by high throughput sequencing
+Platform: GPL24676 27 Samples
+FTP download: GEO (CSV, H5) ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129308/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNA530780
+Series		Accession: GSE129308	ID: 200129308
+
+14. Single-cell epigenomic identification of inherited risk loci in Alzheimer’s and Parkinson’s disease
+(Submitter supplied) Genome-wide association studies (GWAS) have identified thousands of variants associated with disease phenotypes. However, the majority of these variants do not alter coding sequences, making it difficult to assign their function. To this end, we present a multi-omic epigenetic atlas of the adult human brain through profiling of the chromatin accessibility landscapes and three-dimensional chromatin interactions of seven brain regions across a cohort of 39 cognitively healthy individuals. more...
+Organism:	Homo sapiens
+Type:		Genome binding/occupancy profiling by high throughput sequencing; Other
+Platforms: GPL24676 GPL20301 162 Samples
+FTP download: GEO (BED, BIGWIG, NARROWPEAK, RDS, TSV) ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE147nnn/GSE147672/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNA616031
+Series		Accession: GSE147672	ID: 200147672
+
+15. Molecular characterization of selectively vulnerable neurons in Alzheimer’s Disease
+(Submitter supplied) Alzheimer’s disease (AD) is characterized by the selective vulnerability of specific neuronal populations, the molecular signatures of which are largely unknown. To identify and characterize selectively vulnerable neuronal populations, we used single-nucleus RNA sequencing to profile the caudal entorhinal cortex and the superior frontal gyrus – brain regions where neurofibrillary inclusions and neuronal loss occur early and late in AD, respectively – from individuals spanning the neuropathological progression of AD. more...
+Organism:	Homo sapiens
+Type:		Expression profiling by high throughput sequencing
+Platform: GPL24676 20 Samples
+FTP download: GEO (H5) ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE147nnn/GSE147528/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNA615180
+Series		Accession: GSE147528	ID: 200147528
+
+16. Illumina 450K Methylation Data of Alzheimer's Disease: Middle Temporal Gyrus and Cerebellum
+(Submitter supplied) Methylation analysis of 404 samples (Alzheimer's disease = 225; controls = 179) from two brain regions, the middle temporal gyrus (MTG) and the cerebellum (CBL), using the Illumina 450K methylation array.
+Organism:	Homo sapiens
+Type:		Methylation profiling by genome tiling array
+Platform: GPL13534 808 Samples
+FTP download: GEO (IDAT, TXT) ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE134nnn/GSE134379/
+Series		Accession: GSE134379	ID: 200134379
+
+17. Dementia Comparison: VaD vs. AD vs. Controls
+(Submitter supplied) Gene expression profiling was performed on frontal and temporal cortex from vascular dementia (VaD), Alzheimer's disease (AD), and non-demented controls (Control) obtained from the University of Michigan Brain Bank. Controls and AD cases had no infarcts in the autopsied hemisphere. Vascular dementia cases had low Braak staging.
+Organism:	Homo sapiens
+Type:		Expression profiling by array
+Platform: GPL16699 136 Samples
+FTP download: GEO (TXT, XLSX) ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE122nnn/GSE122063/
+Series		Accession: GSE122063	ID: 200122063
+
+18. Agilent 8x60K Custom Exon array of human temporal cortical tissue samples with varying degree of Alzheimer's Disease (AD)-related neurofibrillary pathology
+(Submitter supplied) In this study, we coupled microarray-based transcriptomics and MS-based phosphoproteomics assay to determine mRNA, protein, and phosphopeptide expression levels from 71 autopsied temporal cortical samples, with varying degree of Alzheimer's Disease (AD)-related neurofibrillary pathology. With computational analysis, we identified disease-related transcript, protein and phosphopeptide expression patterns, associated with distinct biological processes and cell types.
+Organism:	Homo sapiens
+Type:		Expression profiling by array
+Platform: GPL24170 60 Samples
+FTP download: GEO (CSV, TXT) ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE106nnn/GSE106241/
+Series		Accession: GSE106241	ID: 200106241
+
+19. DNA methylation profiling of neuron and glia for the dissection of cell type, age and Alzheimer’s disease-specific changes in the human brain
+(Submitter supplied) Alzheimer’s disease (AD) is a progressive brain disorder caused by altered neuronal and glial cell functions. Illumina 450K profiling of cells (nuclei) sorted from post- mortem human brains allowed us assigning cell type- specific epigenetic changes to aging and AD progression. Among a few thousand cell type-specific differentially methylated CpGs (DMCGs) changing with age we identify prominent clusters in the AD genes, CLU, SYNJ2, ANK1 and MCF2L. more...
+Organism:	Homo sapiens
+Type:		Methylation profiling by array
+Platform: GPL13534 190 Samples
+FTP download: GEO (IDAT) ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE66nnn/GSE66351/
+Series		Accession: GSE66351	ID: 200066351
+
+20. Targeted, long-read RNA sequencing of non-coding genomic regions associated with neuropsychiatric functions.
+(Submitter supplied) The human brain is one of the last frontiers of biomedical research. Genome-wide association studies (GWAS) have succeeded in identifying thousands of haplotype blocks associated with a range of neuropsychiatric traits, including disorders such as schizophrenia, Alzheimer’s and Parkinson’s disease. However, the majority of single nucleotide polymorphisms (SNPs) that mark these haplotype blocks fall within non-coding regions of the genome, hindering their functional validation. more...
+Organism:	Homo sapiens
+Type:		Expression profiling by high throughput sequencing
+Platforms: GPL16791 GPL26167 20 Samples
+FTP download: GEO (BED, GTF, TXT) ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE118nnn/GSE118158/
+SRA Run Selector: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNA484721
+Series		Accession: GSE118158	ID: 200118158
+
+21. Molecular Signatures Underlying Selective Regional Vulnerability to Alzheimer's Disease
+(Submitter supplied) Alzheimer's disease (AD) is the most common form of dementia, characterized by progressive cognitive impairment and neurodegeneration as a result of abnormal neuronal loss. To elucidate the molecular systems associated with AD, we characterized the gene expression changes associated with multiple clinical and neuropathological traits in 1,053 postmortem brain samples across 19 brain regions from 125 persons dying with varying severities of dementia and variable AD-neuropathology severities.
+Organism:	Homo sapiens
+Type:		Expression profiling by array
+Platforms: GPL570 GPL96 GPL97 2004 Samples
+FTP download: GEO (CEL) ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE84nnn/GSE84422/
+Series		Accession: GSE84422	ID: 200084422
+
+22. Epigenome Analysis of Post-Mortem Human Temporal Pole Brain Tissue
+(Submitter supplied) Epigenome Analysis of Post-Mortem Human Temporal Pole Brain Tissue For more information, please refer to DOI: 10.3233/JAD-141989
+Organism:	Homo sapiens
+Type:		Methylation profiling by genome tiling array
+Platform: GPL13534 24 Samples
+FTP download: GEO (IDAT, TXT) ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE67nnn/GSE67419/
+Series		Accession: GSE67419	ID: 200067419
+
+23. Alzheimer's Disease Dataset
+(Submitter supplied) This dataset contains microarray data from normal controls (aged 20-99 yrs) and Alzheimer's disease cases, from 4 brain regions: hippocampus, entorhinal cortex, superior frontal cortex, post-central gyrus.   Changes in expression of synaptic and immune related genes were analyzed, investigating age-related changes and AD-related changes, and  region-specific patterns of change. These AD cases were processed simultaneously with the control cases (young and aged) included in GSE11882 (GSE11882 dataset contains data exclusively from normal control brains).
+Organism:	Homo sapiens
+Type:		Expression profiling by array
+Platform: GPL570 253 Samples
+FTP download: GEO (CEL) ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE48nnn/GSE48350/
+Series		Accession: GSE48350	ID: 200048350
