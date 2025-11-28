@@ -4,12 +4,10 @@ library(oligo)
 library(stringr)
 library(org.Hs.eg.db)
 library(clusterProfiler)
-library(sva)
 library(tinyarray)
 library(data.table)
 library(illuminaio)
 library(AnnotationDbi)
-library(org.Hs.eg.db)
 
 
 filterEM2 <- function(probes_expr,probe2gene,method="mean"){
@@ -22,9 +20,6 @@ filterEM2 <- function(probes_expr,probe2gene,method="mean"){
   message(paste0('input probe2gene is ',nrow(probe2gene),' rows(genes or probes)\n'))
   
   probe2gene=na.omit(probe2gene)
-  # if one probe mapped to many genes, we will only keep one randomly.
-  probe2gene=probe2gene[!duplicated(probe2gene$probeid),]
-  # 这个地方是有问题的，随机挑选一个注释进行后续分析。
   probe2gene = probe2gene[probe2gene$probeid %in% rownames(probes_expr),]
   
   message(paste0('after remove NA or useless probes for probe2gene, ',nrow(probe2gene),' rows(genes or probes) left\n'))
@@ -57,15 +52,24 @@ read_CEL <- function(filedir){
   return(exp_probe)
 }
 
-get_exp <- function(filedir){
+get_exp <- function(filedir, sample) {
   geo = getGEO(filename = filedir, getGPL = FALSE)
   exp = exprs(geo)
-  if (max(exp) > 50){
-    exp[is.na(exp)] = 0
-    exp = log2(exp)
+  exp = exp[, sample, drop = FALSE]
+
+  if (max(exp, na.rm = TRUE) > 100) {
+    exp = normalizeBetweenArrays(exp, method = "quantile")
+    exp = log2(exp + 1)
   }
+  else {
+    exp = normalizeBetweenArrays(exp, method = "quantile")
+  }
+  
+  exp[is.na(exp)] = 0
   return(exp)
 }
+
+
 
 get_probe2symbol <- function(filename, flag, number = 1) {
   geo <- getGEO(filename = filename, getGPL = FALSE)
@@ -130,14 +134,6 @@ get_probe2symbol <- function(filename, flag, number = 1) {
 
 ################################################################################
 # GSE5281
-## exp
-exp_GSE5281 = get_exp('geo_data/GSE5281/GSE5281_series_matrix.txt.gz')
-
-## GPL
-probe2symbol = get_probe2symbol('./geo_data/GSE5281/GSE5281_family.soft.gz', 1)
-exp_GSE5281 = filterEM2(exp_GSE5281, probe2symbol)
-exp_GSE5281 = exp_GSE5281[,-1]
-
 ## group
 geo = getGEO(filename = 'geo_data/GSE5281/GSE5281_series_matrix.txt.gz', getGPL = FALSE)
 p = phenoData(geo)
@@ -147,19 +143,17 @@ sample_GSE5281 = p[grepl("HIP", p$title), ]
 sample_GSE5281$'disease' = grepl("affected", sample_GSE5281$title)
 sample_GSE5281 = sample_GSE5281[,-1]
 
-exp_GSE5281 = exp_GSE5281[, c(sample_GSE5281$geo_accession)]
+## exp
+exp_GSE5281 = get_exp('geo_data/GSE5281/GSE5281_series_matrix.txt.gz', sample_GSE5281$geo_accession)
+
+## GPL
+probe2symbol = get_probe2symbol('./geo_data/GSE5281/GSE5281_family.soft.gz', 1)
+exp_GSE5281 = filterEM2(exp_GSE5281, probe2symbol)
+exp_GSE5281 = exp_GSE5281[,-1]
 
 
 ################################################################################
 # GSE28146
-## exp
-exp_GSE28146 = get_exp('geo_data/GSE28146/GSE28146_series_matrix.txt.gz')
-
-## GPL
-probe2symbol = get_probe2symbol('geo_data/GSE28146/GSE28146_family.soft.gz', 1)
-exp_GSE28146 = filterEM2(exp_GSE28146, probe2symbol)
-exp_GSE28146 = exp_GSE28146[,-1]
-
 ## group
 geo = getGEO(filename = 'geo_data/GSE28146/GSE28146_series_matrix.txt.gz', getGPL = FALSE)
 p = phenoData(geo)
@@ -168,13 +162,27 @@ sample_GSE28146 = p[,c(1,2)]
 sample_GSE28146$'disease' = !grepl("Control", sample_GSE28146$title)
 sample_GSE28146 = sample_GSE28146[,-1]
 
-exp_GSE28146 = exp_GSE28146[, c(sample_GSE28146$geo_accession)]
+## exp
+exp_GSE28146 = get_exp('geo_data/GSE28146/GSE28146_series_matrix.txt.gz', sample_GSE28146$geo_accession)
+
+## GPL
+probe2symbol = get_probe2symbol('geo_data/GSE28146/GSE28146_family.soft.gz', 1)
+exp_GSE28146 = filterEM2(exp_GSE28146, probe2symbol)
+exp_GSE28146 = exp_GSE28146[,-1]
 
 
 ################################################################################
 # GSE29378
+## group
+geo = getGEO(filename = 'geo_data/GSE29378/GSE29378_series_matrix.txt.gz', getGPL = FALSE)
+p = phenoData(geo)
+p = p@data
+sample_GSE29378 = p[,c(1,2)]
+sample_GSE29378$'disease' = grepl("AD", sample_GSE29378$title)
+sample_GSE29378 = sample_GSE29378[,-1]
+
 ## exp
-exp_GSE29378 = get_exp('geo_data/GSE29378/GSE29378_series_matrix.txt.gz')
+exp_GSE29378 = get_exp('geo_data/GSE29378/GSE29378_series_matrix.txt.gz', sample_GSE29378$geo_accession)
 
 ## GPL
 probe2symbol = get_probe2symbol('geo_data/GSE29378/GSE29378_family.soft.gz', 3)
@@ -189,19 +197,9 @@ sample_GSE29378 = p[,c(1,2)]
 sample_GSE29378$'disease' = grepl("AD", sample_GSE29378$title)
 sample_GSE29378 = sample_GSE29378[,-1]
 
-exp_GSE29378 = exp_GSE29378[, c(sample_GSE29378$geo_accession)]
-
 
 ################################################################################
 # GSE36980
-## exp
-exp_GSE36980 = get_exp('geo_data/GSE36980/GSE36980_series_matrix.txt.gz')
-
-## GPL
-probe2symbol = get_probe2symbol('geo_data/GSE36980/GSE36980_family.soft.gz', 2)
-exp_GSE36980 = filterEM2(exp_GSE36980, probe2symbol)
-exp_GSE36980 = exp_GSE36980[,-1]
-
 ## group
 geo = getGEO(filename = 'geo_data/GSE36980/GSE36980_series_matrix.txt.gz', getGPL = FALSE)
 p = phenoData(geo)
@@ -211,13 +209,28 @@ sample_GSE36980 = p[grepl('HI', p$title),]
 sample_GSE36980$'disease' = !grepl("non-AD", sample_GSE36980$title)
 sample_GSE36980 = sample_GSE36980[, -1]
 
-exp_GSE36980 = exp_GSE36980[, c(sample_GSE36980$geo_accession)]
+## exp
+exp_GSE36980 = get_exp('geo_data/GSE36980/GSE36980_series_matrix.txt.gz', sample_GSE36980$geo_accession)
+
+## GPL
+probe2symbol = get_probe2symbol('geo_data/GSE36980/GSE36980_family.soft.gz', 2)
+exp_GSE36980 = filterEM2(exp_GSE36980, probe2symbol)
+exp_GSE36980 = exp_GSE36980[,-1]
 
 
 ################################################################################
 # GSE48350
+## group
+geo = getGEO(filename = 'geo_data/GSE48350/GSE48350_series_matrix.txt.gz', getGPL = FALSE)
+p = phenoData(geo)
+p = p@data
+p = p[,c(1,2)]
+sample_GSE48350 = p[grepl('Hippocampus', p$title) | grepl('hippocampus', p$title),]
+sample_GSE48350$'disease' = grepl("AD", sample_GSE48350$title)
+sample_GSE48350 = sample_GSE48350[, -1]
+
 ## exp
-exp_GSE48350 = read_CEL('geo_data/GSE48350/GSE48350_RAW/')
+exp_GSE48350 = get_exp('geo_data/GSE48350/GSE48350_series_matrix.txt.gz', sample_GSE48350$geo_accession)
 
 ## GPL
 probe2symbol = get_probe2symbol('geo_data/GSE48350/GSE48350_family.soft.gz', 1)
@@ -233,19 +246,9 @@ sample_GSE48350 = p[grepl('Hippocampus', p$title) | grepl('hippocampus', p$title
 sample_GSE48350$'disease' = grepl("AD", sample_GSE48350$title)
 sample_GSE48350 = sample_GSE48350[, -1]
 
-exp_GSE48350 = exp_GSE48350[, c(sample_GSE48350$geo_accession)]
-
 
 ################################################################################
 # GSE84422
-## exp
-exp_GSE84422 = get_exp('geo_data/GSE84422/GPL96/GSE84422-GPL96_series_matrix.txt.gz')
-
-## GPL
-probe2symbol = get_probe2symbol('geo_data/GSE84422/GSE84422_family.soft.gz', 1)
-exp_GSE84422 = filterEM2(exp_GSE84422, probe2symbol)
-exp_GSE84422 = exp_GSE84422[, -1]
-
 ## group
 geo = getGEO(filename = 'geo_data/GSE84422/GPL96/GSE84422-GPL96_series_matrix.txt.gz', getGPL = FALSE)
 p = phenoData(geo)
@@ -255,7 +258,13 @@ sample_GSE84422 = sample_GSE84422[, c(2, 50)]
 sample_GSE84422$'disease' = (sample_GSE84422$`neuropathological category:ch1`=='definite AD')
 sample_GSE84422 = sample_GSE84422[,-2]
 
-exp_GSE84422 = exp_GSE84422[, c(sample_GSE84422$geo_accession)]
+## exp
+exp_GSE84422 = get_exp('geo_data/GSE84422/GPL96/GSE84422-GPL96_series_matrix.txt.gz', sample_GSE84422$geo_accession)
+
+## GPL
+probe2symbol = get_probe2symbol('geo_data/GSE84422/GSE84422_family.soft.gz', 1)
+exp_GSE84422 = filterEM2(exp_GSE84422, probe2symbol)
+exp_GSE84422 = exp_GSE84422[, -1]
 
 
 ################################################################################
@@ -281,11 +290,10 @@ exp_GSE173954 = exp_GSE173954[, c(sample_GSE173954$geo_accession)]
 
 
 ################################################################################
-# GSE236562
+# GSE236562 RNA-seq
 ## exp
 exp_GSE236562 = read.delim('geo_data/GSE236562/GSE236562_raw_counts_GRCh38.p13_NCBI.tsv', row.names = 1)
-exp_GSE236562 = log2(exp_GSE236562)
-exp_GSE236562[exp_GSE236562 == '-Inf'] = 0
+exp_GSE236562 = log2(exp_GSE236562 +1 )
 
 ## GPL
 probe2symbol = read.delim('geo_data/GSE236562/Human.GRCh38.p13.annot.tsv')
@@ -304,11 +312,10 @@ exp_GSE236562 = exp_GSE236562[, c(sample_GSE236562$geo_accession)]
 
 
 ################################################################################
-# GSE67333
+# GSE67333 RNA-seq
 ## exp
 exp_GSE67333 = read.delim('geo_data/GSE67333/GSE67333_raw_counts_GRCh38.p13_NCBI.tsv', row.names = 1)
-exp_GSE67333 = log2(exp_GSE67333)
-exp_GSE67333[exp_GSE67333 == -Inf] = 0
+exp_GSE67333 = log2(exp_GSE67333 + 1)
 
 
 ## GPL
@@ -328,11 +335,10 @@ exp_GSE67333 = exp_GSE67333[, c(sample_GSE67333$geo_accession)]
 
 
 ################################################################################
-# GSE193438
+# GSE193438 RNA-seq
 ## exp
 exp_GSE193438 = read.delim('geo_data/GSE193438/GSE193438_raw_counts_GRCh38.p13_NCBI.tsv', row.names = 1)
-exp_GSE193438 = log2(exp_GSE193438)
-exp_GSE193438[exp_GSE193438 == -Inf] = 0
+exp_GSE193438 = log2(exp_GSE193438 + 1)
 
 ## GPL
 probe2symbol = read.delim('geo_data/GSE193438/Human.GRCh38.p13.annot.tsv')
